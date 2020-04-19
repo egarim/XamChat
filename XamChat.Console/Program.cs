@@ -31,17 +31,18 @@ namespace XamChat.ConsoleApp
             {
                 var text = Console.ReadLine();
                 if (text == "exit")
-                {
-                    keepGoing = false;
+                { 
                 }
                 else if(text == "leave")
                 {
                     await service.LeaveChannelAsync(room, name);
                     await JoinRoom();
+                   
                 }
                 else
                 {
-                    await service.SendMessageAsync(room, name, text);
+
+                    await service.SendMessageAsync(room, name, $"{name}:{text}");
                 }
             }
             while (keepGoing);
@@ -53,6 +54,7 @@ namespace XamChat.ConsoleApp
             room = Console.ReadLine();
 
             await service.JoinChannelAsync(room, name);
+            Console.WriteLine($"you are connected to {room} as {name}");
         }
 
 

@@ -24,7 +24,7 @@ namespace XamChat.Core
         {
             random = new Random();
 
-            var port = (urlRoot == "localhost" || urlRoot == "10.0.2.2") ?
+            var port = (urlRoot == "localhost" || urlRoot == "192.168.0.25") ?
                 (useHttps ? ":5001" : ":5000") :
                 string.Empty;
 

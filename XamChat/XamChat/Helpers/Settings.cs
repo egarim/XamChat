@@ -8,13 +8,13 @@ namespace XamChat.Helpers
         public static string AppCenterAndroid = "AC_ANDROID";
 
 #if DEBUG
-        static readonly string defaultIP = DeviceInfo.Platform == DevicePlatform.Android ? "10.0.2.2" : "localhost";
+        static readonly string defaultIP = DeviceInfo.Platform == DevicePlatform.Android ? "192.168.0.25" : "localhost";
 #else
         static readonly string defaultIP = "xamchatr.azurewebsites.net";
 #endif
         public static bool UseHttps
         {
-            get => (defaultIP != "localhost" && defaultIP != "10.0.2.2");
+            get => (defaultIP != "localhost" && defaultIP != "192.168.0.25");
         }
 
         public static string ServerIP
