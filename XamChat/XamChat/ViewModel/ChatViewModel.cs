@@ -50,7 +50,7 @@ namespace XamChat.ViewModel
             DisconnectCommand = new Command(async () => await Disconnect());
             random = new Random();
 
-            ChatService.Init(Settings.ServerIP, Settings.UseHttps);
+            ChatService.Init(Settings.ServerIP,false);
 
             ChatService.OnReceivedMessage += (sender, args) =>
             {

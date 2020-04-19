@@ -24,11 +24,12 @@ namespace XamChat.Core
         {
             random = new Random();
 
-            var port = (urlRoot == "localhost" || urlRoot == "192.168.0.25") ?
-                (useHttps ? ":5001" : ":5000") :
-                string.Empty;
+            //var port = (urlRoot == "localhost" || urlRoot == "192.168.0.25") ?
+            //    (useHttps ? ":5001" : ":5000") :
+            //    string.Empty;
 
-            var url = $"http{(useHttps ? "s" : string.Empty)}://{urlRoot}{port}/hubs/chat";
+            //var url = $"http{(useHttps ? "s" : string.Empty)}://{urlRoot}{port}/XamChat.Backend/hubs/chat";
+            var url = "http://192.168.0.25/XamChat.Backend/hubs/chat";
             hubConnection = new HubConnectionBuilder()
             .WithUrl(url)
             .Build();
